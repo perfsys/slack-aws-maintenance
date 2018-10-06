@@ -43,14 +43,14 @@ provider:
 functions:
   cleanup:
     handler: handler.cleanup_old_files
-    timeout: 300
+#    timeout: 300
     environment: # Function level environment variables
       AGE: 30
     events:
       - schedule:
           name: perfsys-slack-maintenance-rate-event
           description: 'perfsys-slack-maintenance-rate-event'
-          rate: rate(2 hours)
+          rate: rate(10 minutes)
           enabled: true
 
 #    The following are a few example events you can configure
