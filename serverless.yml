@@ -43,6 +43,7 @@ provider:
 functions:
   cleanup:
     handler: handler.cleanup_old_files
+    timeout: 300
     environment: # Function level environment variables
       AGE: 30
     events:
